@@ -40,7 +40,7 @@ def getArgs(options, argList):
             if opt != None:
                 args.extend(['--' + arg, '\"' + str(opt) + '\"'])
         except AttributeError:
-            print 'AttributeError for arg %s'%arg
+            print('AttributeError for arg %s'%arg)
             pass
 
     return args
@@ -388,10 +388,10 @@ def combine_tdv_results(program_file_map, out_file_name, base_cols = ['Dataset',
             if len(prog_pepts) == len(indexed_db_info):
                 all_agree += 1
         else:
-            print 'Discarded due to disagreement'
+            print('Discarded due to disagreement')
             for prog in indexed_db_info:
                 if scan in indexed_db_info[prog]:
-                    print indexed_db_info[prog][scan]
+                    print(indexed_db_info[prog][scan])
 
             discarded += 1
     num_overlap = all_agree + discarded
@@ -437,12 +437,12 @@ def map_human_proteome_dbresults(em_top_results_file, human_proteome_db_results,
     frac_map = {}
     for dataset in top_results:
         items = top_results[dataset]
-        #print items
+        #print(items)
         frac_agree_counts = defaultdict(int)
         for frac in indexed_em:
             for item in items:
                 if item['ScanF'] in indexed_em[frac]:
-                    #print item[peptide_key], indexed_em[frac][item['ScanF']]['Context'][2:-2]
+                    #print(item[peptide_key], indexed_em[frac][item['ScanF']]['Context'][2:-2])
                     if item[peptide_key] == indexed_em[frac][item['ScanF']]['Context'][2:-2]:
                         frac_agree_counts[frac] += 1
         try:
@@ -451,17 +451,17 @@ def map_human_proteome_dbresults(em_top_results_file, human_proteome_db_results,
                 frac_map[dataset] = best_frac[0]
         except IndexError:
             # Happens if db fraction not present in TG data (possibly corrupted raw file or some other reason)
-            print 'INDEX ERROR', frac_agree_counts
+            print('INDEX ERROR', frac_agree_counts)
             pass
 
     if len(set(frac_map.values())) != len(frac_map.values()):
-        print sorted(frac_map.items(), key = lambda k: k[1])
-        #print em_top_results_file, human_proteome_db_results
-        print 'CRITICAL ERROR: REDUNDANT FRACTION MAPPING %s'%str( sorted(frac_map.items(), key = lambda k: k[1]) )
+        print(sorted(frac_map.items(), key = lambda k: k[1]))
+        #print(em_top_results_file, human_proteome_db_results)
+        print('CRITICAL ERROR: REDUNDANT FRACTION MAPPING %s'%str( sorted(frac_map.items(), key = lambda k: k[1]) ))
 
     if len(set(frac_map.values())) != len(indexed_em.keys()):
-        print len(set(frac_map.values())), len(indexed_em.keys())
-        print 'CRITICAL ERROR: Number of fractions in fraction map does not match number of fractions in TAG-GRAPH results for %s %s'%(em_top_results_file, human_proteome_db_results)
+        print(len(set(frac_map.values())), len(indexed_em.keys()))
+        print('CRITICAL ERROR: Number of fractions in fraction map does not match number of fractions in TAG-GRAPH results for %s %s'%(em_top_results_file, human_proteome_db_results))
 
     # Get Summary Statistics
     total_spectra, agree, disagree, db_total, tg_total = 0, 0, 0, 0, 0
@@ -520,7 +520,7 @@ def executeProcess(progLoc, prog, args, interpreter='python'):
         cmd = ' '.join([os.path.join(progLoc, prog)] + args)
     else:
         cmd = ' '.join([interpreter] + [os.path.join(progLoc, prog)] + args)
-	print cmd
+    print(cmd)
 
     '''
     By Default, Posix is True. This properly handles the double-quotes that ArgLib adds around arguments/paths,
@@ -540,7 +540,7 @@ def getFilesFTP(ftp_url, ftp_dir, wildcard):
     ftp.cwd(ftp_dir)
 
     resp = ftp.retrlines('NLST', file_list.append)
-    print 'Number of files in directory', len(file_list)
+    print('Number of files in directory', len(file_list))
     ftp.quit()
 
     for file in file_list:
@@ -550,7 +550,7 @@ def getFilesFTP(ftp_url, ftp_dir, wildcard):
             ftp.login()
             ftp.cwd(ftp_dir)
 
-            print 'Retrieving file %s'%file
+            print('Retrieving file %s'%file)
             outfile = open(file, 'w')
             ftp.retrbinary("RETR " + file, outfile.write)
             outfile.close()
@@ -800,7 +800,7 @@ def getScoringMatrix(absPath):
         line = fin.readline()
         char = line[0]
         if AAMap[char] != i:
-            print 'ERROR: scoring matrix not properly formatted for AA %s' % char
+            print('ERROR: scoring matrix not properly formatted for AA %s' % char)
         else:
             data = line[2:]
             k = j = 0
@@ -846,7 +846,7 @@ def generateSeqMap(progDict, symbolMap, paramsDict):
         try:
             seqMap[prog]['AAs'].update(symbolMap[prog]['AAs'])
         except KeyError:
-            print 'AAs dictionary for program %s not present in symbol map' % (prog,)
+            print('AAs dictionary for program %s not present in symbol map' % (prog,))
 
     for mod in paramsDict['Diff Mods'].keys():
         modType = paramsDict['Diff Mods'][mod][0]
@@ -861,7 +861,7 @@ def generateSeqMap(progDict, symbolMap, paramsDict):
                     # modify all amino acids with static mod
                     seqMap[prog]['AAs'][paramsDict['Diff Mods'][mod][1]] = seqMap[prog]['AAs'][paramsDict['Diff Mods'][mod][1]] + mod
             except KeyError:
-                print 'Modification of type %s unaccounted for in modDict for program %s' % (modType, prog)
+                print('Modification of type %s unaccounted for in modDict for program %s' % (modType, prog))
 
     for modData in paramsDict['Static Mods'].keys():
         modType, aa_loc = modData
@@ -870,7 +870,7 @@ def generateSeqMap(progDict, symbolMap, paramsDict):
                 progMod = symbolMap[prog]['Mods'][modType]
                 seqMap[prog]['Mods'][(progMod, aa_loc)] = ''
             except KeyError:
-                print 'Modification of type %s unaccounted for in modDict for program %s' % (modType, prog)
+                print('Modification of type %s unaccounted for in modDict for program %s' % (modType, prog))
 
     return seqMap
 
@@ -887,7 +887,7 @@ paramHandler = {
 }
 
 def parseParams(fname):
-    #print fname
+    #print(fname)
     paramsDict = {}
     params = ConfigParser.ConfigParser()
     params.read(fname)
@@ -899,7 +899,7 @@ def parseParams(fname):
             except KeyError:
                 raise KeyError('%s not a valid category. Valid categories are: %s' % (section, str(paramHandler.keys())))
 
-    #print paramsDict
+    #print(paramsDict)
     paramsDict['Static AAs'] = [entry[1] for entry in paramsDict['Static Mods']]
     return paramsDict
 
@@ -914,7 +914,7 @@ paramHandler_v1 = {
 'Cluster Configuration': lambda datum, args: parseClusterConfiguration(datum, args)
 }
 def parseParams_v1(fname):
-    #print fname
+    #print(fname)
     paramsDict = {}
     params = ConfigParser.ConfigParser()
     params.read(fname)
@@ -1051,7 +1051,7 @@ def getUniquePeptides(proc_tag_graph, score_key='De Novo Score'):
             matching_pepts[context[0][2:-2]] += [context]
 
         if len(matching_pepts) > 1:
-            print 'Multiple matching peptides found for de novo peptide %s: %s'%(proc_tag_graph[scanF]['De Novo Peptide'], matching_pepts.keys())
+            print('Multiple matching peptides found for de novo peptide %s: %s'%(proc_tag_graph[scanF]['De Novo Peptide'], matching_pepts.keys()))
 
         for peptide in matching_pepts:
             element = copy.copy(proc_tag_graph[scanF])
@@ -1121,7 +1121,7 @@ def isIsobaricContext(context):
 def preprocessDatabaseScanInfo(scanInfo, seqMap, fieldMap, scanNumKey='ScanF', seqDelimLen=2):
     DBScanInfo = {}
     for scan in scanInfo:
-        #print scan
+        #print(scan)
         scanNum = int(scan[scanNumKey])
         info = {}
 
@@ -1137,7 +1137,7 @@ def preprocessDatabaseScanInfo(scanInfo, seqMap, fieldMap, scanNumKey='ScanF', s
             else:
                 procSeq = Constants.preprocessSequence(scan['Peptide'], seqMap, ambigEdges = ambigEdges)
         #except KeyError:
-        #    print 'ERROR: Could not process sequence %s with current sequence map' % (scan['Peptide'][seqDelimLen:-seqDelimLen],)
+        #    print('ERROR: Could not process sequence %s with current sequence map' % (scan['Peptide'][seqDelimLen:-seqDelimLen],))
         #    continue
         except IndexError:
             if scan['Peptide'] == 'NULL':
@@ -1189,7 +1189,7 @@ def plotSpectra(massIntPairs, precMass = 'None', charge = 'Undefined'):
     pl.show()
 """
 if __name__ == '__main__':
-    #print getScanInfo('adevabhaktuni_1310166306.csv')
+    #print(getScanInfo('adevabhaktuni_1310166306.csv'))
     """
     dirPath = 'C:\\Users\\Arun\\Pythonprojects\\DeNovoSequencing\\src\\SpectraCorrelation\\LF2_short_HCD+CID_ath001862_244\\'
     names = getDTAFNamesInDir(dirPath)
@@ -1199,9 +1199,9 @@ if __name__ == '__main__':
     plotSpectra(massIntPairs, precMass, charge)
     """
     #fields = ['LIGHT SCAN', 'HEAVY SCAN', 'SEQ', 'SCORE', 'AMBIGUOUS EDGES', 'M+H', 'EPSILON', 'SHARED PEAKS RATIO', 'SEQUENCING TIME']
-    #print getScanInfo('C:\\Users\\Arun\\Proteomics Files\\ath001862UPen10KPen15LRRestrictTest.tdv', fields, delimiter='\t')
+    #print(getScanInfo('C:\\Users\\Arun\\Proteomics Files\\ath001862UPen10KPen15LRRestrictTest.tdv', fields, delimiter='\t'))
     paramsDict = parseParams('./Misc/LADS_SILAC_Trypsin.ini')
-    print paramsDict
+    print(paramsDict)
     seqMap = generateSeqMap(['SEQUEST', 'MASCOT'], paramsDict)
-    print seqMap
+    print(seqMap)
 
