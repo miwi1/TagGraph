@@ -1,1 +1,8 @@
 *.fasta
+data
+"example data"
+.idea
+*.dat
+*.dir
+*.pck
+*.txt
