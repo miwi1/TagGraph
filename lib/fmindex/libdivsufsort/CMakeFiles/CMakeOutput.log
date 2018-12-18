@@ -1,0 +1,337 @@
+The system is: Linux - 2.6.18-348.3.1.el5 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec.dir/testCCompiler.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc       -fPIC CMakeFiles/cmTryCompileExec.dir/testCCompiler.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc       -fPIC CMakeFiles/cmTryCompileExec.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test HAVE_GCC_WALL succeded with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -DHAVE_GCC_WALL -Wall   -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc     -DHAVE_GCC_WALL -Wall  -fPIC CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_FOMIT_FRAME_POINTER succeded with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -Wall  -DHAVE_GCC_FOMIT_FRAME_POINTER -fomit-frame-pointer   -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall  -DHAVE_GCC_FOMIT_FRAME_POINTER -fomit-frame-pointer  -fPIC CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall    -fPIC CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall    -fPIC CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall    -fPIC CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall    -fPIC CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall    -fPIC CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall    -fPIC CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file strings.h exists passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall    -fPIC CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall    -fPIC CMakeFiles/cmTryCompileExec.dir/CheckIncludeFile.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test HAVE_INLINE succeded with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -Wall  -DHAVE_INLINE   -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall  -DHAVE_INLINE  -fPIC CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+Source file was:
+inline void func(); void func() { } int main() { func(); return 0; }
+Performing C SOURCE FILE Test HAVE___INLINE succeded with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -Wall  -DHAVE___INLINE   -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall  -DHAVE___INLINE  -fPIC CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+Source file was:
+__inline void func(); void func() { } int main() { func(); return 0; }
+Performing C SOURCE FILE Test HAVE___INLINE__ succeded with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/src.c.o
+/usr/bin/gcc   -Wall  -DHAVE___INLINE__   -o CMakeFiles/cmTryCompileExec.dir/src.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall  -DHAVE___INLINE__  -fPIC CMakeFiles/cmTryCompileExec.dir/src.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+Source file was:
+__inline__ void func(); void func() { } int main() { func(); return 0; }
+Determining size of uint8_t passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckTypeSizeC.c.o
+/usr/bin/gcc   -Wall   -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H   -o CMakeFiles/cmTryCompileExec.dir/CheckTypeSizeC.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckTypeSizeC.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall   -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H  -fPIC CMakeFiles/cmTryCompileExec.dir/CheckTypeSizeC.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Determining size of int32_t passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckTypeSizeC.c.o
+/usr/bin/gcc   -Wall   -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H   -o CMakeFiles/cmTryCompileExec.dir/CheckTypeSizeC.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckTypeSizeC.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall   -DHAVE_SYS_TYPES_H -DHAVE_STDINT_H -DHAVE_STDDEF_H  -fPIC CMakeFiles/cmTryCompileExec.dir/CheckTypeSizeC.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+
+Determining if the PRId32 exist passed with the following output:
+Change Dir: /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+gmake[1]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[2]: Entering directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -Wall     -o CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o   -c /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc    -Wall    -fPIC CMakeFiles/cmTryCompileExec.dir/CheckSymbolExists.c.o  -o cmTryCompileExec -rdynamic 
+gmake[2]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp'
+
+File /home/adevabhaktuni/FM-Index-master/FM-Index-master/libdivsufsort/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <inttypes.h>
+
+void cmakeRequireSymbol(int dummy,...){(void)dummy;}
+int main()
+{
+#ifndef PRId32
+  cmakeRequireSymbol(0,&PRId32);
+#endif
+  return 0;
+}
+

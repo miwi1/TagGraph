@@ -1,0 +1,74 @@
+##### General Settings #####
+[General]
+# Not used at this time, place-holder for the capabilities to only run the TG step, or the EM step if TG was run previously
+runTG = True
+runEM = True
+
+# If set to True the copies of the input mzML/mzXML input files are removed from the output tree when the run has finished.
+cleanInputDataFilesFromOutput = True
+cleanIntermediateFiles = False
+
+# If pep.xml should be generated as part of the process.
+generatePepXML = False
+outputPerFraction = True
+FDRCutoff = 0.01
+logEMCutoff = 2
+DisplayProteinNum = 5
+##### END General Settings #####
+
+##### TagGraph Settings #####
+[TagGraph]
+# An integer number of data files to be used as fractions, and the path to each (mz[X]ML) data file with 2-digit counter appended to 'fraction' as key
+dataDirectory     = /home/slin/sampleInputFiles/mzML/
+
+# Name to be used for this experiment and its output files and directories. Must not contain spaces.
+ExperimentName = A375MZML
+
+# Location of input de novo search results exported from de novo sequencing program in .csv or .pepXML format. See README for format requirements/examples or more details.
+de_novo        = /home/slin/sampleInputFiles/PEAKS/de_novo_peptides_mzML.csv
+
+# Path to folder TagGraph will create to store output. Should not already exist.
+output         = /home/slin/sampleInputFiles/TG/mzML_EM_output
+
+# Initialization file used to configure TAG-GRAPH. See README for detailed information.
+init           = /home/slin/sampleInputFiles/TG/TAG_GRAPH_Tryp_CysCarbam_MetOx.ini
+
+# Location and name of fmindex to search.  This fmindex location should include multiple related files as described in the README. 
+fmindex        = /home/slin/sampleInputFiles/FMIndices/human_uniprot_12092014_crap.fm
+
+# Expected standard deviation in ppm error distributions of fragment ions. Recommend 5 for HCD 30,000 resolution
+ppmstd         = 10
+
+# Maximum absolute deviation (Da) between experimental and database modification mass for TagGraph to consider modification as a candidate match. Recommend 0.1.
+modtolerance   = 0.1
+
+# Maximum number of times a de novo-produced substring can occur in the protein sequence database for TagGraph to consider it as an unmodified peptide match.
+# Recommend less than 1,000 for single organism database (i.e., human uniprot) and 5,000 for nr or 6-frame translations
+maxcounts      = 400
+
+# Maximum number of times a de novo-produced substring can occur in the protein sequence database for TagGraph to consider it as a modified peptide match.
+# Recommend 200 for single organism database (i.e. human uniprot) and 1,000 for nr or 6-frame translations
+modmaxcounts   = 200
+
+# Location of pickled (python-serialized) unimod dictionary
+unimoddict     = resources/unimodDict_noLabels_20160724.pck
+
+# Path to pickled (python-serialized) probabilistic model file.
+model          = resources/AllChargeDist_posOnlyDependence_20150808_HumanProt500000.pck
+
+# Path to pickled (python-serialized) model configuration file.
+config         = resources/AllChargeDist_posOnlyDependence_20150808.txt
+##### End TagGraph Settings #####
+
+
+##### EM Settings #####
+[EM]
+# Number of iterations in initial EM over all results. Recommend 20 iterations.	
+initIterations = 20
+
+# Maximum number of expectation maximization iterations for FDR assignment. Recommend 100 iterations.
+maxIterations = 100
+
+# Filename Prefix to use for the output EM results files. Must not contain spaces.
+resultsPrefix = EM_Results
+##### End EM Settings #####

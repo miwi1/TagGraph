@@ -1,0 +1,118 @@
+**** start TagGraph process: 2018-02-22 19:09:35.338783
+
+
+***************************************
+*** START TAGGRAPH FROM CONFIG FILE ***
+***************************************
+
+/home/slin/sampleInputFiles/TG/A375mzML.params
+
+---------------------------------------------------------------------------------------
+Using Configuration File: /home/slin/sampleInputFiles/TG/A375mzML.params
+---------------------------------------------------------------------------------------
+* Found Required Numeric TagGraph Parameter 'ppmstd'  : '10'
+* Found Required Numeric TagGraph Parameter 'modtolerance'  : '0.1'
+* Found Required Numeric TagGraph Parameter 'maxcounts'  : '400'
+* Found Required Numeric TagGraph Parameter 'modmaxcounts'  : '200'
+* Found Required Readable File for TagGraph Parameter 'unimoddict' : 'resources/unimodDict_noLabels_20160724.pck'
+* Found Required Readable File for TagGraph Parameter 'model' : 'resources/AllChargeDist_posOnlyDependence_20150808_HumanProt500000.pck'
+* Found Required Readable File for TagGraph Parameter 'config' : 'resources/AllChargeDist_posOnlyDependence_20150808.txt'
+* Found Required Readable File for TagGraph Parameter 'init' : '/home/slin/sampleInputFiles/TG/TAG_GRAPH_Tryp_CysCarbam_MetOx.ini'
+* Found Required Readable File for TagGraph Parameter 'de_novo' : '/home/slin/sampleInputFiles/PEAKS/de_novo_peptides_mzML.csv'
+* Found Required Createable Directory for TagGraph Parameter 'output' : '/home/slin/sampleInputFiles/TG/mzML_EM_output'
+* Found Required TagGraph Parameter ExperimentName: 'A375MZML'
+dataDirectory: /home/slin/sampleInputFiles/mzML/
+fileFractionMapping: [('01', 'ath017216_F01.mzML'), ('02', 'ath017217_F02.mzML')]
+* Created temporary sym-link Directory for TagGraph mz[X]ML files '/tmp/A375MZML_5509/'
+   * Created symLink '/tmp/A375MZML_5509/A375MZML_f01.mzML' to data file '/home/slin/sampleInputFiles/mzML/ath017216_F01.mzML'
+   * Created symLink '/tmp/A375MZML_5509/A375MZML_f02.mzML' to data file '/home/slin/sampleInputFiles/mzML/ath017217_F02.mzML'
+* Found Required fmindex TagGraph Parameter '/home/slin/sampleInputFiles/FMIndices/human_uniprot_12092014_crap.fm'
+   * Found Required readable fmindex file at '/home/slin/sampleInputFiles/FMIndices/human_uniprot_12092014_crap.fm.1'
+   * Found Required readable fmindex Offset file at '/home/slin/sampleInputFiles/FMIndices/human_uniprot_12092014_crap.offsets'
+   * Found Required readable fmindex Seqnames file at '/home/slin/sampleInputFiles/FMIndices/human_uniprot_12092014_crap.seqnames.1'
+* Found Required EM Numeric Parameter 'maxIterations'  : '100'
+* Found Required EM Numeric Parameter 'initIterations'  : '20'
+* Found Required EM Parameter 'resultsPrefix': 'EM_Results'
+
+TG ARGS: ['-p', '"10"', '-l', '"0.1"', '-M', '"400"', '-C', '"200"', '-c', '"resources/AllChargeDist_posOnlyDependence_20150808.txt"', '-i', '"/home/slin/sampleInputFiles/TG/TAG_GRAPH_Tryp_CysCarbam_MetOx.ini"', '-d', '"/tmp/A375MZML_5509/"', '-m', '"resources/AllChargeDist_posOnlyDependence_20150808_HumanProt500000.pck"', '-o', '"/home/slin/sampleInputFiles/TG/mzML_EM_output/"', '-Q', '"resources/unimodDict_noLabels_20160724.pck"', '-f', '"/home/slin/sampleInputFiles/FMIndices/human_uniprot_12092014_crap.fm"', '-K', '"{\'A375MZML\': \'/home/slin/sampleInputFiles/PEAKS/de_novo_peptides_mzML.csv\'}"']
+
+
+---------------------------------------------------------------------------------------
+*** CALLING RUN_TAGGRAPH_HUMAN_PROTEOME_EASY.py from runTG.py
+---------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------
+*** END CALLING RUN_TAGGRAPH_HUMAN_PROTEOME_EASY.py from runTG.py
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+*** VERIFYING TAGGRAPH OUTPUTS in runTG.py 
+---------------------------------------------------------------------------------------
+* Found Required SQLITE DB File '/home/slin/sampleInputFiles/TG/mzML_EM_output/results.db', size 51432448 Bytes OK
+* Found Required Single Mods File '/home/slin/sampleInputFiles/TG/mzML_EM_output/A375MZML_addPlausibleMods_poss_single_mods.tdv', size 74143 Bytes OK
+* Found Required Combo Mods File '/home/slin/sampleInputFiles/TG/mzML_EM_output/A375MZML_addPlausibleMods_poss_combo_mods.tdv', size 588067 Bytes OK
+* Found Required de novo CSV File '/home/slin/sampleInputFiles/TG/mzML_EM_output/A375MZML/de_novo/A375MZML_PEAKS.csv'
+* Found Required Parsed de novo File '/home/slin/sampleInputFiles/TG/mzML_EM_output/A375MZML/de_novo/A375MZML_PEAKS_parsed.tdv'
+
+---------------------------------------------------------------------------------------
+*** END VERIFYING TAGGRAPH OUTPUTS in runTG.py
+---------------------------------------------------------------------------------------
+* Successfully copied Configuration File '/home/slin/sampleInputFiles/TG/A375mzML.params' to Output Directory '/home/slin/sampleInputFiles/TG/mzML_EM_output/'
+EM ARGS: ['-i', '"/home/slin/sampleInputFiles/TG/TAG_GRAPH_Tryp_CysCarbam_MetOx.ini"', '-F', '"all"', '-M', '"100"', '-C', '"20"', '-B', '"/home/slin/sampleInputFiles/TG/mzML_EM_output/results.db"', '-E', '"A375MZML"', '-o', '"/home/slin/sampleInputFiles/TG/mzML_EM_output/EM_Results"']
+
+---------------------------------------------------------------------------------------
+*** CALLING ComputeEMProbabilitiesFromDB.py from runTG.py
+---------------------------------------------------------------------------------------
+
+*** command executed: python ComputeEMProbabilitiesFromDB.py ['-i', '"/home/slin/sampleInputFiles/TG/TAG_GRAPH_Tryp_CysCarbam_MetOx.ini"', '-F', '"all"', '-M', '"100"', '-C', '"20"', '-B', '"/home/slin/sampleInputFiles/TG/mzML_EM_output/results.db"', '-E', '"A375MZML"', '-o', '"/home/slin/sampleInputFiles/TG/mzML_EM_output/EM_Results"']
+
+---------------------------------------------------------------------------------------
+*** END CALLING ComputeEMProbabilitiesFromDB.py from runTG.py
+---------------------------------------------------------------------------------------
+* Found EMProbs END TOPONLY file '/home/slin/sampleInputFiles/TG/mzML_EM_output/EM_Results_EMProbs_END_TOPONLY.tdv'
+
+
+---------------------------------------------------------------------------------------
+*** CALLING verify EM result tests from runTG.py
+
+time now: @ 2018-02-22 19:28:22.568664
+Spectrum score test: result=2.7 : Pass.
+Tag length test: result=7.76 : Pass.
+Mod Size test: result=0.17 : Pass.
+
+---------------------------------------------------------------------------------------
+
+time now: @ 2018-02-22 19:28:22.859245
+*** END CALLING verify EM result tests from runTG.py
+---------------------------------------------------------------------------------------
+* Found TopResult file '/home/slin/sampleInputFiles/TG/mzML_EM_output/A375MZML_TopResults.tdv'
+**** start parseResultsDB process: 2018-02-22 19:28:22.859388
+* Found  Numeric TagGraph Parameter 'FDRCutoff'  : '0.01'
+* Found  Numeric TagGraph Parameter 'logEMCutoff'  : '2'
+* Found  Numeric TagGraph Parameter 'DisplayProteinNum'  : '5'
+---------------------------------------------------------------------------------------
+*** CALLING parseResultsDB.py from runTG.py
+---------------------------------------------------------------------------------------
+
+*** command executed: python parseResultsDB.py ['"/home/slin/sampleInputFiles/TG/mzML_EM_output/"', '"/home/slin/sampleInputFiles/TG/TAG_GRAPH_Tryp_CysCarbam_MetOx.ini"', '"Yes"', '"0.01"', '"2"', '"5"']
+
+---------------------------------------------------------------------------------------
+*** END CALLING parseResultsDB.py from runTG.py
+**** done parseResultsDB process: 2018-02-22 19:28:31.777315
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+***    CLEANING UP
+---------------------------------------------------------------------------------------
+* Successfully removed temporary symbolic link directory '/tmp/A375MZML_5509/'
+* Removed mz[X]ML and DTA files from data directory '/home/slin/sampleInputFiles/TG/mzML_EM_output/A375MZML/data/' (cleanInputDataFilesFromOuput is True)
+* Leaving mz[X]ML and Intermediate files in output directory '/home/slin/sampleInputFiles/TG/mzML_EM_output/A375MZML/data/' (cleanIntermediateFiles is False)
+---------------------------------------------------------------------------------------
+***  END CLEANING UP
+---------------------------------------------------------------------------------------
+
+
+*************************************
+*** END TAGGRAPH FROM CONFIG FILE ***
+*************************************
+
+**** end TagGraph process: 2018-02-22 19:28:32.270995
