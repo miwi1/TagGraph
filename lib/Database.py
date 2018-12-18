@@ -297,9 +297,9 @@ def getNumMissedCleavages(context, mod_context, mods, motifs, modAASymbol = '-')
             num_missed += 1
 
     # TODO: Subtract missed cleavages introduced by insertions (can show up for transpeptidation events, not really missed cleavages)?
-    #print context, mod_context, mods, num_missed
+    #print(context, mod_context, mods, num_missed)
     return num_missed
-            
+
 
 
 # calculates probability of sequence (relative to all other sequences of same length) using markov model
@@ -312,15 +312,15 @@ def calculate_sequence_probability_markov(markov_model, sequence):
         prob = prob * decimal.Decimal(str(markov_model['Markov Model'][sequence[i-1]][sequence[i]]))
 
     return prob
-        
+
 def calculate_match_probability_markov(markov_model, sequence):
     if len(sequence) == 0:
         return 1
-    
+
     seq_prob = calculate_sequence_probability_markov(markov_model, sequence)
     num_tries = markov_model['AAs'] - markov_model['Proteins'] * (len(sequence) - 1)
     return decimal.Decimal(1) - (decimal.Decimal(1) - seq_prob)**num_tries
-    
+
 def calculate_sequence_probability_constant(sequence, num_aas = 19):
     if len(sequence) == 0:
         return 1
@@ -330,7 +330,7 @@ def calculate_sequence_probability_constant(sequence, num_aas = 19):
 def calculate_match_probability_constant(db_stats, sequence):
     if len(sequence) == 0:
         return 1
-    
+
     seq_prob = calculate_sequence_probability_constant(sequence)
     num_tries = db_stats['AAs'] - db_stats['Proteins'] * len(sequence) - 1
     return decimal.Decimal(1) - (decimal.Decimal(1) - seq_prob)**num_tries
@@ -357,16 +357,16 @@ def chunkAndWriteSequence(outFile, baseSeqName, fullSequence, frame, ntSeqLength
                 for forbidAA in dontReadThrough:
                     if fullSequence.find(forbidAA,i) != -1:
                         lowestInd = min(lowestInd, fullSequence.find(forbidAA,i))
-            
+
             if lowestInd - i > minPeptLength and (not chunkSize or lowestInd - i <= chunkSize):
                 prepAndWriteSubsequence(outFile, baseSeqName, fullSequence, frame, ntSeqLength, i, lowestInd, lineLength=lineLength)
             elif chunkSize and lowestInd - i > chunkSize:
                 for startInd in range(i, lowestInd, chunkSize-overhang):
                     prepAndWriteSubsequence(outFile, baseSeqName, fullSequence, frame, ntSeqLength, startInd, min(startInd+chunkSize, lowestInd), lineLength=60)
-            
+
             i = lowestInd
-                    
-                
+
+
 def prepAndWriteSubsequence(outFile, baseSeqName, fullSequence, frame, ntSeqLength, startInd, endInd, lineLength=60):
     seqStart = 1 + abs(frame) + 3*startInd
     seqEnd = seqStart + 3*(endInd - startInd)
@@ -434,16 +434,16 @@ def writeTrueAndDecoyDB(source_fasta, outFileName, keep_fixed = ['K'], decoy_del
         writeSequence(outFile, seq_name, sequence, lineLength=60)
 
     outFile.close()
-    
+
 
 
 # Define maximum size of index to be slightly less than UINT32_MAX to allow suffix array indexing
 # Also saves offsets file defining sequence names offsets in db
 def makeDBForFMIndexFromFASTA(fastaFile, outFileBase, transformLtoI = True, seqSeperator='-', maxIndexSize = 2**31-2):
-    print outFileBase
-    print "\n"
-    print fastaFile
-    print "\n"
+    print(outFileBase)
+    print("\n")
+    print(fastaFile)
+    print("\n")
     seqGen = sequenceGenerator(fastaFile)
 
     i = 1
@@ -454,32 +454,32 @@ def makeDBForFMIndexFromFASTA(fastaFile, outFileBase, transformLtoI = True, seqS
     offSet = 0
     outFile = open(outFileBase + '_fmFormatted.txt.%i'%i, 'w')
     offsets = []
-    
+
     offsets_arr = []
     for seqName, sequence in seqGen:
         # Sometimes FASTAs have weird whitespace in them, can screw up index
         sequence = clean_sequence(sequence)
-        
+
         indSize += len(sequence) + 1
         if indSize > maxIndexSize:
-            print 'Index size %i greater than max %i, creating new index partition'%(indSize, maxIndexSize)
+            print('Index size %i greater than max %i, creating new index partition'%(indSize, maxIndexSize))
             nameDB.close()
             outFile.close()
             offsets_arr += [np.array(offsets, dtype=np.uint32)]
-            
+
             i += 1
             indSize = len(sequence) + 1
             nameDB = anydbm.open(outFileBase + '.seqnames.%i'%i, 'n')
             offSet = 0
             outFile = open(outFileBase + '_fmFormatted.txt.%i'%i, 'w')
             offsets = []
-            
-        
+
+
         parsed_seq_name = seqName[1:]
         nameDB[str(offSet)] = parsed_seq_name
         offsets += [offSet]
         offSet += len(sequence) + 1
-        
+
         outFile.write(seqSeperator)
         if transformLtoI:
             outFile.write(sequence.replace('L', 'I'))
@@ -489,7 +489,7 @@ def makeDBForFMIndexFromFASTA(fastaFile, outFileBase, transformLtoI = True, seqS
     offsets_arr += [np.array(offsets, dtype=np.uint32)]
     with open(outFileBase + '.offsets', 'w') as fout:
         pickle.dump(offsets_arr, fout)
-    
+
     outFile.close()
     nameDB.close()
 
@@ -509,37 +509,37 @@ def format_seqs_for_motifX(seqs_file, out_file_name, motif_len = 15, seq_len = 4
         # replace sequence ends with wildcard
         new_seqs += [seq.replace('*', 'X')]
 
-    print 'get unique'
+    print('get unique')
     if unique:
         new_seqs = set(new_seqs)
 
     if len(new_seqs) > max_size:
-        print 'newseqs g'
+        print('newseqs g')
         #for i in range(min(max_num_crossvals, len(new_seqs)/float(max_size) * 2)):
-        rand_smpl = [ new_seqs[i] for i in sorted(random.sample(xrange(len(new_seqs)), max_size)) ]
+        rand_smpl = [ new_seqs[i] for i in sorted(random.sample(range(len(new_seqs)), max_size)) ]
         #out_file = open(out_file_name + str(i+1), 'w')
         out_file = open(out_file_name, 'w')
         for seq in rand_smpl:
             out_file.write(seq + '\n')
         out_file.close()
     else:
-        print 'maxsize g'
+        print('maxsize g')
         out_file = open(out_file_name, 'w')
         for seq in new_seqs:
             out_file.write(seq + '\n')
         out_file.close()
 
 if __name__ == '__main__':
-    print 'This program will take a FASTA file from the --lads argument and output a six-frame translation of the file to output. Number refers to maximum size of sequence in resulting FASTA file. If a chromosomal region exceeds this length with no stop codons, the sequence will be chunked with a 100 aa overhang at each edge. Minimum Length of peptide in FASTA file is 5.'
+    print('This program will take a FASTA file from the --lads argument and output a six-frame translation of the file to output. Number refers to maximum size of sequence in resulting FASTA file. If a chromosomal region exceeds this length with no stop codons, the sequence will be chunked with a 100 aa overhang at each edge. Minimum Length of peptide in FASTA file is 5.')
     options = ArgLib.parse(['lads', 'output', 'number'])
 
     outFile = open(options.output, 'w')
     #chunkSize = int(options.number)
-    
+
     for seqName, sequence in sequenceGenerator(options.lads):
         #for frame in [1, 2, 3, -1, -2, -3]:
         for frame in [1,2,3]:
-            #print seqName, frame
+            #print(seqName, frame)
             transSeq = getTranslation(sequence.upper(), frame)
             #chunkAndWriteSequence(outFile, seqName, transSeq, frame, len(sequence), lineLength=60, chunkSize=2000, dontReadThrough=['X'], minPeptLength=10, overhang=50)
             #transSeqName = seqName + ('_+' if frame > 0 else '_') + str(frame)
