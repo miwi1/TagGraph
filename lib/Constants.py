@@ -106,7 +106,7 @@ def hashUnimodModAAsEpsilonRange(unimodPeptDict, epStep = 0.0005, maxEp=0.08):
 #        modList[terminus] = zip(*unimodPeptDict[terminus])[0]
         for i, peptide in enumerate(unimodPeptDict[terminus]):
             newKey = np.round(peptide[1]/epStep)
-#            print peptide, epStep, newKey
+#            print(peptide, epStep, newKey)
             for intEp in range(minIntEp, maxIntEp+1):
                 try:
                     hashed[terminus][intEp+newKey]['seqs'][peptide[0]] = epStep*intEp
@@ -166,7 +166,7 @@ def addStaticMod(datum, args):
     return {(datum, args[0]): args[1]}
 
 def addDiffMod(datum, args):
-    print datum, args
+    print(datum, args)
     try:
         symb = args[3]
     except IndexError:
@@ -187,7 +187,7 @@ def addDiffMod(datum, args):
             AAdata = list(aminoacids[aa])
 
         AAdata[2] += float(args[1])
-        #print AAdata
+        #print(AAdata)
         aminoacids[aa + symb] = tuple(AAdata)
 
     except KeyError:
@@ -201,7 +201,7 @@ def addDiffMod(datum, args):
     return {symb: (datum, args[0], args[1])}
 
 def addDiffMod_v1(datum, args):  #
-#    print datum, args
+#    print(datum, args)
     try:
         symb = args[3]
     except IndexError:
@@ -342,7 +342,7 @@ def parseModifications(modDict, aminoacids=aminoacids, epsilon=0.02, minModAAMas
             if not (location[1] == 'Anywhere' and location[0] != 'N-term' and location[0] != 'C-term'):
                 aa = location[0] if not location[0] == 'L' else 'I'
                 if mod == 'Acetyl':
-                    print aa
+                    print(aa)
                 for modMass in modAAsDict['Anywhere']:
                     # Don't consider double modified terminal modifications
                     if 'Unmod' == modAAsDict['Anywhere'][modMass][1] and (modAAsDict['Anywhere'][modMass][0] == aa or aa == 'N-term' or aa == 'C-term'):
@@ -366,17 +366,17 @@ def getUnimodPeptDict(maxPolyPepMass, unimodDict, maxPolyPepLength=3):
     ntermSeedSet = getModList(unimodDict['N-term']) | anywhereSeedSet
     ctermSeedSet = getModList(unimodDict['C-term']) | anywhereSeedSet
 
-    print 'Anywhere'
+    print('Anywhere')
     unimodPeptDict['Anywhere'] = []
     for peptide in blindModPeptDFS(maxPolyPepMass, list(anywhereSeedSet), maxPolyPepLength = 3, seedList=list(anywhereSeedSet)):
         unimodPeptDict['Anywhere'] += [peptide]
 
-    print 'C-term'
+    print('C-term')
     unimodPeptDict['C-term'] = []
     for peptide in blindModPeptDFS(maxPolyPepMass, list(anywhereSeedSet), maxPolyPepLength = 3, seedList=list(ctermSeedSet)):
         unimodPeptDict['C-term'] += [((peptide[0][0][::-1], peptide[0][1][::-1]), peptide[1])]
 
-    print 'N-term'
+    print('N-term')
     unimodPeptDict['N-term'] = []
     for peptide in blindModPeptDFS(maxPolyPepMass, list(anywhereSeedSet), maxPolyPepLength = 3, seedList=list(ntermSeedSet)):
         unimodPeptDict['N-term'] += [peptide]
@@ -439,7 +439,7 @@ def nodeInfoGen(seq, startMass=0, aaDict=aminoacids, addTerminalNodes=False, con
                 aa += seq[i]
                 i += 1
         except KeyError:
-            #print seq, aa, i, seq[i], AAs, prm
+            #print(seq, aa, i, seq[i], AAs, prm)
             if aa == '' and seq[i] == ambigAA:
                 aa = ambigAA
                 i += 1
@@ -502,9 +502,9 @@ def getTermModHashForPairConfig(pairConfig):
 def massLadder(seq, startMass=0):
     nodes = nodeInfoGen(seq, startMass)
     for node in nodes:
-        print 'Prm: %f, AA: %s' % (node['prm'], node['formAA'])
+        print('Prm: %f, AA: %s' % (node['prm'], node['formAA']))
 
-    print 'Prm: %f, AA: %s' % (node['prm'] + aminoacids[node['lattAA']][2], node['lattAA'])
+    print('Prm: %f, AA: %s' % (node['prm'] + aminoacids[node['lattAA']][2], node['lattAA']))
 
 # From LADS Analytics.py
 #Assumption-->all amino acids denoted by single letters^M
@@ -536,7 +536,7 @@ def getAllAAs(seq, ambigAA='X', ambigEdges=None):
     nodeGen = nodeInfoGen(seq, considerTerminalMods=True, ambigEdges=ambigEdges, ambigAA=ambigAA)
     for node in nodeGen:
         AAs['AA'].extend([node['formAA']])
-        #print node
+        #print(node)
 
     AAs['AA'].extend([node['lattAA']])
 
@@ -683,11 +683,11 @@ def preprocessSequence(seq, seqMap, replaceExistingTerminalMods=False, ambigAA='
 if __name__ == '__main__':
     aas = getPeptsOfMaxLength(3)
     for aa in aas:
-        print aa, aas[aa]
-    print 'length', len(aas)
+        print(aa, aas[aa])
+    print('length', len(aas))
     aas = addPepsToAADict(300)
-    print len(aas)
+    print(len(aas))
 
 #    nodeGen = nodeInfoGen('AAAXGHYX', addTerminalNodes=True, considerTerminalMods=True, ambigEdges=[(10,20), (20,40)])
 #    for node in nodeGen:
-#        print node
+#        print(node)
