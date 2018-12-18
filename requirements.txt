@@ -1,0 +1,8 @@
+sqlalchemy
+pympler
+numpy
+networkx
+pymzml
+MySQLclient
+pyteomics
+
