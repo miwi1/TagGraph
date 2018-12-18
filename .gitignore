@@ -9,3 +9,4 @@ data
 *.pag
 *.pickle
 *.pck.original
+*.model
