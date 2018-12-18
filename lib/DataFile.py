@@ -13,8 +13,9 @@ import xml.etree.ElementTree as etree
 import Constants
 import shlex
 import subprocess
+import dbm
 
-csv.field_size_limit(sys.maxsize)
+
 searchprogs = ['LADS', 'SEQUEST', 'MASCOT', 'SORCERER', 'PepNovo', 'NovoHMM', 'MaxQuant', 'LuteFisk', 'X!Tandem', 'SPIDER', 'PEAKS', 'OMSSA', 'InSpect', 'pNovo', 'Combined']
 
 def getMotifZResults(results_file):
@@ -806,7 +807,6 @@ def getScoringMatrix(absPath):
     return AAMap, matrix
 
 def getDBInfo(db, key=None):
-    import anydbm as dbm
     db = dbm.open(db, 'r')
     if key:
         return pickle.loads(db[key])
@@ -1187,6 +1187,9 @@ if __name__ == '__main__':
     precMass, charge = getPrecMassAndCharge(fname)
     plotSpectra(massIntPairs, precMass, charge)
     """
+
+    csv.field_size_limit(sys.maxsize)
+
     #fields = ['LIGHT SCAN', 'HEAVY SCAN', 'SEQ', 'SCORE', 'AMBIGUOUS EDGES', 'M+H', 'EPSILON', 'SHARED PEAKS RATIO', 'SEQUENCING TIME']
     #print(getScanInfo('C:\\Users\\Arun\\Proteomics Files\\ath001862UPen10KPen15LRRestrictTest.tdv', fields, delimiter='\t'))
     paramsDict = parseParams('./Misc/LADS_SILAC_Trypsin.ini')

@@ -2,7 +2,7 @@ import DataFile
 import ArgLib
 import Constants
 
-import anydbm
+import dbm
 import pickle
 import numpy as np
 from collections import defaultdict
@@ -450,7 +450,7 @@ def makeDBForFMIndexFromFASTA(fastaFile, outFileBase, transformLtoI = True, seqS
     indSize = 0
 
     # Initialize first index partion
-    nameDB = anydbm.open(outFileBase + '.seqnames.%i'%i, 'n')
+    nameDB = dbm.open(outFileBase + '.seqnames.%i'%i, 'n')
     offSet = 0
     outFile = open(outFileBase + '_fmFormatted.txt.%i'%i, 'w')
     offsets = []
@@ -469,7 +469,7 @@ def makeDBForFMIndexFromFASTA(fastaFile, outFileBase, transformLtoI = True, seqS
 
             i += 1
             indSize = len(sequence) + 1
-            nameDB = anydbm.open(outFileBase + '.seqnames.%i'%i, 'n')
+            nameDB = dbm.open(outFileBase + '.seqnames.%i'%i, 'n')
             offSet = 0
             outFile = open(outFileBase + '_fmFormatted.txt.%i'%i, 'w')
             offsets = []
