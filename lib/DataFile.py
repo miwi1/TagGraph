@@ -1,32 +1,20 @@
-'''
-Created on Jun 1, 2011
-@author: Arun
-
-#slin 20170623
-
-'''
 import numpy as np
 import os
 import sys
 import csv
 import copy
 import pickle
-import anydbm as dbm
-import ConfigParser
+import configparser
 import glob
 import re
 from collections import defaultdict
 import ftplib
 import xml.etree.ElementTree as etree
-
 import Constants
-
 import shlex
 import subprocess
 
 csv.field_size_limit(sys.maxsize)
-
-
 searchprogs = ['LADS', 'SEQUEST', 'MASCOT', 'SORCERER', 'PepNovo', 'NovoHMM', 'MaxQuant', 'LuteFisk', 'X!Tandem', 'SPIDER', 'PEAKS', 'OMSSA', 'InSpect', 'pNovo', 'Combined']
 
 def getMotifZResults(results_file):
@@ -818,6 +806,7 @@ def getScoringMatrix(absPath):
     return AAMap, matrix
 
 def getDBInfo(db, key=None):
+    import anydbm as dbm
     db = dbm.open(db, 'r')
     if key:
         return pickle.loads(db[key])
@@ -889,7 +878,7 @@ paramHandler = {
 def parseParams(fname):
     #print(fname)
     paramsDict = {}
-    params = ConfigParser.ConfigParser()
+    params = configparser.configparser()
     params.read(fname)
     for section in params.sections():
         paramsDict[section] = {}
@@ -916,7 +905,7 @@ paramHandler_v1 = {
 def parseParams_v1(fname):
     #print(fname)
     paramsDict = {}
-    params = ConfigParser.ConfigParser()
+    params = configparser.configparser()
     params.read(fname)
     for section in params.sections():
         paramsDict[section] = {}

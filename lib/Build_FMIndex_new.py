@@ -26,8 +26,6 @@ if args.output == '':
     print('BLANK OUTPUT basename - using the FASTA input file  base: {}'.format(output_filename))
     args.output = output_filename
 
-print(args)
-sys.exit()
 
 Database.makeDBForFMIndexFromFASTA(args.fasta, args.output)
 
