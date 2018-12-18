@@ -10,3 +10,4 @@ data
 *.pickle
 *.pck.original
 *.model
+*.txt.1
