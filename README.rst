@@ -1,7 +1,11 @@
 
 TagGraph Python project
 =======================
-TagGraph is a sensitive, protease independent, 
+
+This is meant to be a Python3-compatible version of TagGraph, as an ongoing project.  Please download the original project
+at Sourceforge:  https://sourceforge.net/projects/taggraph/
+
+TagGraph is a sensitive, protease independent,
 blind modification search tool for large and small sequence databases.
 
 
